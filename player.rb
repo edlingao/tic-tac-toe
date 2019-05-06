@@ -6,11 +6,10 @@ class Player
         @symbol = symbol
     end
 
-    def show_name
-        name
-    end
-    def show_symbol
-        symbol
+    private
+    def has_win?(he_wins = false)
+        return true if he_wins
+        return false
     end
 
 

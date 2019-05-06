@@ -15,17 +15,15 @@ class Board
 
     private
  
-
     public
     def play_position(col, row, symbol)
         board_position[col][row] = symbol
-
     end
     def print_board
         board = "
             0   1   2\n
         0   #{board_position[0][0]} | #{board_position[0][1]} | #{board_position[0][2]}\n
-        1   #{board_position[1][0]} | #{board_position[1][1]} | #{board_position[2][1]}\n
+        1   #{board_position[1][0]} | #{board_position[1][1]} | #{board_position[1][2]}\n
         2   #{board_position[2][0]} | #{board_position[2][1]} | #{board_position[2][2]}"
         
         return board
