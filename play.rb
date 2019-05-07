@@ -1,11 +1,11 @@
 #board.rb
-require_relative 'board'
+require_relative 'class/board'
 #player.rb
-require_relative 'player'
+require_relative 'class/player'
 #game.rb
-require_relative 'game'
+require_relative 'class/game'
 #menu_module.rb
-require_relative 'menu_module'
+require_relative 'class/menu_module'
 include Menu
 def play(win,players,g,board)
     i = 0
