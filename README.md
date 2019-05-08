@@ -20,13 +20,19 @@
 
 #Playing
 
--To establish a movement first select the column of the board in wich you want to place your symbol
+-To establish a movement you got to select the number in wich you want to place your symbol
+-The board looks like this 
 
--Then place the row in wich you want to place your symbol
+    O | 2 | 3
+    - | - | -
+    4 | X | 6
+    - | - | -
+    X | 8 | 9
 
+-Every cell with a number is available to play
 
 
 #instructions
 
--Instructions of how to play are on the 'instructions' section opn the menu
+-Instructions of how to play are on the 'instructions' option on the main menu
 

@@ -20,7 +20,7 @@ module Menu
         menu_options = ["Play", "Basic instructions", "Exit"]
         display = "To move through options please press up/down key and then press enter\nTo choose an option just press enter or input 'S' or 's' and then press enter key\n\n\t\t--- Menu ---\n"
         menu_options.each_with_index{|value, i|
-            if i == option then display += "->#{menu_options[option].colorize(:background => :light_black)}\n"
+            if i == option then display += "->#{menu_options[option].colorize(:color => :light_magenta)}\n"
             else display += "#{value}\n"
             end
         }
@@ -30,12 +30,13 @@ module Menu
 
     private
     def instructions(bor)
-        bor.play_position(0,0,"X")
-        bor.play_position(1,1,"X")
-        bor.play_position(2,2,"X")
+        sym_ex = "X".colorize(:color => :red)
+        bor.play_position(0,sym_ex)
+        bor.play_position(4,sym_ex)
+        bor.play_position(8,sym_ex)
 
-        exmpl = bor.print_board
-        message = "First player is always the first one to play\nYou win when you fill 3 consecutive cells of your symbol ex.\n#{exmpl}\nRemember to always have fun an never get mad\nStart by choosing 'Pay' on menu"
+        
+        message = "First player is always the first one to play\nYou win when you fill 3 consecutive cells of your symbol ex.\n#{bor.print_board}\nRemember to always have fun an never get mad\nStart by choosing 'Play' on menu"
 
     end
 end

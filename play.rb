@@ -1,3 +1,4 @@
+require 'colorize'
 #board.rb
 require_relative 'class/board'
 #player.rb
@@ -6,7 +7,10 @@ require_relative 'class/player'
 require_relative 'class/game'
 #menu_module.rb
 require_relative 'class/menu_module'
+
 include Menu
+
+
 def play(win,players,g,board)
     i = 0
     cats_game = false
@@ -14,11 +18,10 @@ def play(win,players,g,board)
         system("clear")
         puts board.print_board();
         puts "Its #{players[i].name} turn"
-        print "Input the column you want to play: "
-        col = gets.chomp
-        print "Input the row you want to play: "
-        row = gets.chomp
-        prbr = g.turn(players[i], row.to_i, col.to_i)
+        print "Input the number in wich you want to play: "
+        pos = gets.chomp
+        
+        prbr = g.turn(players[i], pos.to_i)
         case prbr
             when "Is not possible to play on that coordenate" then 
                 puts "Is not possible to play on that coordenate"
@@ -26,27 +29,38 @@ def play(win,players,g,board)
                 sleep(1)
             else
                 puts prbr    
-                win = g.win?
+                win = g.win?(players[i])
                 cats_game = g.cats_game?
-                puts "Player: #{players[i].name} has win!!" if win
                 i = i >= 1 ? 0 : 1
+        end
+        if win
+            winner = i - 1
+            i = 10
+            10.times{
+                system("clear")
+                puts board.print_board();
+                puts "Congratulations #{players[winner].name}\n YOU WIN!!\nReturning to main menu in.. #{i}"
+                sleep(1)
+                i-=1
+            }
         end
         
         if cats_game && !win
             win = true
-            puts "Cat's game!!\nNone players win!"
-            sleep(5)
+            pi = 10
+            10.times{
+                system("clear")
+                puts board.print_board();
+                puts "CATS GAME!!!\nNone players win!!\nReturning to main menu in.. #{i}"
+                sleep(1)
+                i-=1
+            }
         end
+        
     
     end
     j = 10
-    for i in 1 .. 10
-        system("clear")
-        puts board.print_board
-        puts "Returning to menu on #{j}... seconds"
-        j -= 1
-        sleep(1)
-    end
+    
 end
 
 
@@ -86,8 +100,8 @@ while(playing) do
                 print "Set a symbol to play for player 2: "
                 symbol2 = gets.chomp
 
-                p1 = Player.new(name1,symbol1)
-                p2 = Player.new(name2,symbol2)
+                p1 = Player.new(name1,symbol1.colorize(:color => :red))
+                p2 = Player.new(name2,symbol2.colorize(:color => :cyan))
                 players = [p1,p2]
                 board = Board.new()
                 g = Game.new(board,p1,p2)

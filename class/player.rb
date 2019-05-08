@@ -1,15 +1,9 @@
 class Player
-    attr_accessor :name, :symbol
-
+    attr_accessor :name, :symbol, :win_arr
     def initialize(name,symbol)
         @name = name
         @symbol = symbol
-    end
-
-    private
-    def has_win?(he_wins = false)
-        return true if he_wins
-        return false
+        @win_arr = Array.new(3){Array.new(8)}
     end
 
 
