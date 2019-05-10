@@ -1,14 +1,15 @@
-# tic-tac-toe
+# Tic-Tac-Toe
 
 #Move through menu
 
 -Use arrow keys for moving(Up/Down) and then press enter
+-To select an option simply input "S"or "s" or simply press ENTER
 
 #Play
 -To play, select the 'Play' option on the menu
 
--Choose a name for the plyer 1 and the symbol that player is going to use
 
+-Choose a name for the plyer 1 and the symbol that player is going to use
 -Choose a name for player 2 and the symbol
 
 -Ex: 
@@ -16,7 +17,6 @@
  "Select Symbol : " X
 
 -After you finish setting everything up a board will show up
-
 
 #Playing
 
