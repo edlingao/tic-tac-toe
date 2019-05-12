@@ -1,5 +1,6 @@
 # Object file
 *.o
-
+.Ds_Store
+.vscode
 # Ada Library Information
 *.ali
