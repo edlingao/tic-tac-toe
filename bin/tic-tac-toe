@@ -2,13 +2,13 @@
 
 require 'colorize'
 #board.rb
-require_relative '../lib/class/board.rb'
+require_relative '../lib/board.rb'
 #player.rb
-require_relative '../lib/class/player'
+require_relative '../lib/player'
 #game.rb
-require_relative '../lib/class/game'
+require_relative '../lib/game'
 #menu_module.rb
-require_relative '../lib/class/menu_module'
+require_relative '../lib/menu_module'
 
 include Menu
 
